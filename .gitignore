@@ -3,5 +3,6 @@ ref
 *.TTF
 *.exe
 *.EXE
-*.jpg
-*.JPG
+mathjax/
+mathjax-mhchem/
+jquery/

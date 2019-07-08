@@ -1,4 +1,6 @@
-@charset "UTF-8"; /* 正文样式 */
+@charset "UTF-8";
+/* 正文样式 */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -24,25 +26,41 @@ article {
 }
 
 h1 {
-    string-set: subtitle content();
-    page: chapter-title;
-    page-break-before: right;
+    margin-top: -20mm;
+    counter-increment: chapternum;
     counter-reset: figurenum;
     counter-reset: footnote;
-    counter-increment: chapternum;
-    bookmark-level: 1;
-    font-size: 5rem;
     text-align: right;
+    font-size: 5rem;
+    line-height: 157mm;
+    page-break-before: right;
+    string-set: subtitle content();
+    page: chapter-title;
+    bookmark-level: 1;
+}
+
+h1::after {
+    position: absolute;
+    bottom: -15mm;
+    left: -21mm;
+    z-index: -1;
+    display: block;
+    width: 210mm;
+    height: 140mm;
+    background-position: top center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    content: '';
 }
 
 h2 {
-    page-break-before: always;
-    bookmark-level: 2;
-    font-size: 2rem;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
+    font-size: 2rem;
     column-span: all;
+    page-break-before: always;
     page-break-after: avoid;
+    bookmark-level: 2;
     column-break-after: avoid;
 }
 
@@ -51,11 +69,11 @@ h2 {
 }
 
 h3 {
-    bookmark-level: 3;
+    margin-top: 2em;
     font-weight: 300;
     font-size: 1.5rem;
-    margin-top: 2em;
     page-break-after: avoid;
+    bookmark-level: 3;
     column-break-after: avoid;
 }
 
@@ -68,10 +86,10 @@ h4 {
 }
 
 h5 {
+    margin-top: 0em;
+    margin-bottom: 0.5em;
     font-weight: 600;
     font-size: 1rem;
-    margin-bottom: 0.5em;
-    margin-top: 0em;
 }
 
 h4, h5, .no-toc {
@@ -87,12 +105,12 @@ table, pre, .imgBlock {
 }
 
 p {
-    text-indent: 2em;
-    text-align: justify;
-    prince-text-justify: prince-cjk;
-    prince-footnote-policy: keep-with-line;
     margin-top: 0em;
     margin-bottom: 0em;
+    text-align: justify;
+    text-indent: 2em;
+    prince-text-justify: prince-cjk;
+    prince-footnote-policy: keep-with-line;
 }
 
 a {
@@ -113,18 +131,18 @@ a.xref-p2:after {
 }
 
 .quote {
-    font-family: FangSong;
     margin-top: 1em;
     margin-bottom: 1em;
+    font-family: FangSong;
 }
 
 .notes {
-    font-family: KaiTi;
-    line-height: 1.5;
-    background-color: cmyk(0,0,0,0.05);
-    padding: 1em;
     margin-top: 1em;
     margin-bottom: 1em;
+    padding: 1em;
+    background-color: cmyk(0,0,0,0.05);
+    font-family: KaiTi;
+    line-height: 1.5;
 }
 
 figure {
@@ -157,20 +175,20 @@ ol.half-bracket li::marker, ol ol ol li::marker {
 
 /* 目录样式 */
 .toc {
-    page: toc;
     page-break-before: right;
     page-break-after: right;
+    page: toc;
     string-set: subtitle "目录";
 }
 
 .tocTitle {
+    margin-bottom: 1.5em;
+    margin-left: 0;
     text-align: center;
     font-weight: 600;
-    margin-left: 0;
-    margin-bottom: 1.5em;
-    bookmark-level: 1;
     font-size: 3rem;
     font-family: HeiTi;
+    bookmark-level: 1;
 }
 
 .tocMain {
@@ -179,17 +197,17 @@ ol.half-bracket li::marker, ol ol ol li::marker {
 }
 
 .toc ul {
-    list-style: none;
-    font-family: HeiTi;
-    font-size: 1.5rem;
     margin-left: 0;
+    list-style: none;
     font-weight: 600;
+    font-size: 1.5rem;
+    font-family: HeiTi;
 }
 
 .toc ul ul {
-    font-size: 1.2rem;
     margin-left: 3rem;
     font-weight: 300;
+    font-size: 1.2rem;
 }
 
 .toc ul ul ul {
@@ -197,8 +215,8 @@ ol.half-bracket li::marker, ol ol ol li::marker {
 }
 
 .toc ul a::after {
-    content: leader('.') '　' target-counter(attr(href), page);
     margin-left: 1em;
+    content: leader('.') '　' target-counter(attr(href), page);
 }
 
 .toc ul ul ul a::after {
@@ -207,8 +225,8 @@ ol.half-bracket li::marker, ol ol ol li::marker {
 
 .tocAuthors {
     float: inside;
-    width: 25%;
     margin-top: 140mm;
+    width: 25%;
     border-spacing: 0;
 }
 
@@ -218,8 +236,8 @@ ol.half-bracket li::marker, ol ol ol li::marker {
 
 .tocAuthors th:first-child {
     width: 60%;
-    text-align: left;
     vertical-align: top;
+    text-align: left;
 }
 
 .tocAuthors td:last-child {
@@ -234,8 +252,8 @@ ol.half-bracket li::marker, ol ol ol li::marker {
 
 /* MathJax */
 .MathJax, .MathJax_CHTML, .MathJax_SVG {
-    margin-left: 0.25em !important;
     margin-right: 0.25em !important;
+    margin-left: 0.25em !important;
 }
 
 .MathJax_SVG_Display {
@@ -243,8 +261,8 @@ ol.half-bracket li::marker, ol ol ol li::marker {
 }
 
 .MathJax_SVG_Display .MathJax_SVG {
-    margin-left: 0 !important;
     margin-right: 0 !important;
+    margin-left: 0 !important;
 }
 
 #MathJax_Message {
@@ -380,17 +398,32 @@ p.no-column {
     font-family: FangSong;
 }
 
-/* 单页设计 */
-.chap-xue-yuan-gai-kuang {
-    page: chap-xue-yuan-gai-kuang;
-    margin-top: 105mm;
-}
-
-@page chap-xue-yuan-gai-kuang {
-    background-image: url(../images/head-xue-yuan-gai-kuang.png);
+.fullImageTop {
+    float: top;
+    margin-top: -20mm;
+    width: 210mm;
+    height: 70mm;
+    background-position: center top;
     background-size: 100% auto;
     background-repeat: no-repeat;
-    background-position: center top;
+    column-span: all;
+    margin-inside: -21mm;
+    margin-outside: -16mm;
+}
+
+.fullImageTop:first-child {
+    page-break-before: always;
+}
+
+.fullImageTop+h2 {
+    page-break-before: initial;
+}
+
+.studentBlock {
+    position: relative;
+    font-family: KaiTi;
+    page-break-inside: avoid;
+    column-break-inside: avoid;
 }
 
 .studentImage {
@@ -398,21 +431,18 @@ p.no-column {
     height: 15rem;
     background-size: auto 100%;
     background-repeat: no-repeat;
+}
+
+.studentInfo {
     position: absolute;
-    left: 0;
-    top: 0;
+    bottom: 0;
+    left: 10.5rem;
 }
 
 .studentName {
-    font-size: 1.5rem;
-    line-height: 2.6rem;
+    font-size: 2rem;
 }
 
-.studentBlock {
-    font-family: KaiTi;
-    position: relative;
-    padding-left: 10.5rem;
-    padding-top: 9rem;
-    page-break-inside: avoid;
-    column-break-inside: avoid;
+.chap-xue-sheng-huo-dong::after {
+    background-image: url(../images/chap-xue-sheng-huo-dong.jpg);
 }

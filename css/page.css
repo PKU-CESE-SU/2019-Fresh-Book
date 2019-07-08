@@ -1,54 +1,62 @@
-@charset "UTF-8"; /* 排版样式 */
+@charset "UTF-8";
+/* 排版样式 */
+
 @page {
-    size: A4 portrait;
     margin-top: 20mm;
     margin-bottom: 15mm;
-    margin-inside: 21mm;
-    margin-outside: 16mm;
     /* 如果要每页重置脚注号可以使用以下样式 */
     /* counter-reset: footnote; */
+    size: A4 portrait;
+    margin-inside: 21mm;
+    margin-outside: 16mm;
 }
 
-/* 正文页面，左侧页样式 */
 @page :left {
-    /* 左上角显示页码 */
     @top-left-corner {
+        padding-top: 10mm;
+        background-color: cmyk(0,0,0,0.3,0.6);
+        color: cmyk(0,0,0,0.8);
         content: counter(page) "　";
-        font-family: KaiTi;
+        vertical-align: top;
         font-size: 8pt;
-        color: cmyk(0,0,0,0.8);
-        /* 颜色需使用CMYK色空间 */
+        font-family: KaiTi;
     }
 
-    /* 左上方显示章标题 */
     @top-left {
+        padding-top: 10mm;
+        border-bottom-right-radius: 10mm;
+        background-color: cmyk(0,0,0,0.3,0.6);
+        color: cmyk(0,0,0,0.8);
         content: "|　环院直通车";
-        font-family: KaiTi;
+        vertical-align: top;
         font-size: 8pt;
-        color: cmyk(0,0,0,0.8);
+        font-family: KaiTi;
     }
 }
 
-/* 正文页面，右侧页样式 */
 @page :right {
-    /* 右上角显示页码 */
     @top-right-corner {
-        content: "　" counter(page);
-        font-family: KaiTi;
-        font-size: 8pt;
+        padding-top: 10mm;
+        background-color: cmyk(0,0,0,0.3,0.6);
         color: cmyk(0,0,0,0.8);
+        content: "　" counter(page);
+        vertical-align: top;
+        font-size: 8pt;
+        font-family: KaiTi;
     }
 
-    /* 右上方显示节标题 */
     @top-right {
-        content: string(subtitle) "　|";
-        font-family: KaiTi;
-        font-size: 8pt;
+        padding-top: 10mm;
+        border-bottom-left-radius: 10mm;
+        background-color: cmyk(0,0,0,0.3,0.6);
         color: cmyk(0,0,0,0.8);
+        content: string(subtitle) "　|";
+        vertical-align: top;
+        font-size: 8pt;
+        font-family: KaiTi;
     }
 }
 
-/* 正文空白页面，清除所有页边框内容 */
 @page :blank {
     @top-left {
         content: normal;
@@ -67,10 +75,7 @@
     }
 }
 
-/* 序章正文空白页面，清除所有页边框内容 */
 @page chapter-title {
-    margin-top: 40%;
-
     @top-left {
         content: normal;
     }
@@ -86,4 +91,11 @@
     @top-left-corner {
         content: normal;
     }
+}
+
+@page toc:right {
+    background-image: url(../images/inside-mu-lu.jpg);
+    background-position: left bottom;
+    background-size: 70mm auto;
+    background-repeat: no-repeat;
 }
