@@ -2,16 +2,22 @@
 
 /* 字体定义 */
 
-/* 宋体，使用 方正兰亭刊宋_GBK */
+/* 宋体，使用 方正兰亭宋_GBK */
 @font-face {
   font-family: "SongTi";
-  src: url("../fonts/FZLTKSK.TTF");
+  src: url("../fonts/FZLTSK.TTF");
 }
 
-/* 黑体，使用 方正兰亭刊黑_GBK */
+/* 黑体，使用 方正兰亭黑_GBK */
 @font-face {
   font-family: "HeiTi";
-  src: url("../fonts/FZLTKHK.TTF");
+  src: url("../fonts/FZLTHK.TTF");
+}
+
+@font-face {
+    font-weight: bold;
+  font-family: "HeiTi";
+  src: url("../fonts/FZLTZHK.TTF");
 }
 
 /* 楷体，使用 方正楷体_GBK */
@@ -24,4 +30,28 @@
 @font-face {
   font-family: "FangSong";
   src: url("../fonts/FZFSK.TTF");
+}
+
+@font-face {
+    font-family: "Title";
+    src: url("../fonts/FZQianWTJW.TTF");
+}
+
+@font-face {
+    font-weight: bold;
+    font-family: "Title";
+    src: url("../fonts/FZQianWTJW_Cu.TTF");
+}
+
+@font-face {
+    font-family: "Page";
+    src: url("../fonts/FZQianWTJW.TTF");
+    unicode-range: U+2E, U+30-39;
+}
+
+@font-face {
+    font-weight: bold;
+    font-family: "Page";
+    src: url("../fonts/FZQianWTJW_Cu.TTF");
+    unicode-range: U+2E, U+30-39;
 }

@@ -32,6 +32,7 @@ h1 {
     counter-reset: footnote;
     text-align: right;
     font-size: 5rem;
+    font-family: Title;
     line-height: 157mm;
     page-break-before: right;
     string-set: subtitle content();
@@ -77,26 +78,26 @@ h3 {
     column-break-after: avoid;
 }
 
-h2+h3 {
-    margin-top: 0;
-}
-
 h4 {
+    margin-top: 1em;
     font-size: 1.2rem;
 }
 
 h5 {
-    margin-top: 0em;
-    margin-bottom: 0.5em;
-    font-weight: 600;
+    margin-top: 0.5em;
+    font-weight: bold;
     font-size: 1rem;
+}
+
+h2+h3, h3+h4, h4+h5 {
+    margin-top: 0;
 }
 
 h4, h5, .no-toc {
     bookmark-level: none;
 }
 
-b, strong, th, h1, h2, h3, h4, h5, h6 {
+b, strong, th, h2, h3, h4, h5, h6 {
     font-family: HeiTi;
 }
 
@@ -107,6 +108,7 @@ table, pre, .imgBlock {
 p {
     margin-top: 0em;
     margin-bottom: 0em;
+    min-height: 1.5em;
     text-align: justify;
     text-indent: 2em;
     prince-text-justify: prince-cjk;
@@ -147,6 +149,27 @@ a.xref-p2:after {
 
 figure {
     page-break-inside: avoid;
+}
+
+.figureFloatLeft {
+    float: left;
+    margin: 0 4mm 2mm 0;
+}
+
+.figureFloatRight {
+    float: right;
+    margin: 0 0 2mm 4mm;
+}
+
+.figureFull {
+    width: 100%;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    vertical-align: middle;
 }
 
 figcaption {
@@ -201,7 +224,7 @@ ol.half-bracket li::marker, ol ol ol li::marker {
     list-style: none;
     font-weight: 600;
     font-size: 1.5rem;
-    font-family: HeiTi;
+    font-family: Page, HeiTi;
 }
 
 .toc ul ul {
@@ -398,9 +421,7 @@ p.no-column {
     font-family: FangSong;
 }
 
-.fullImageTop {
-    float: top;
-    margin-top: -20mm;
+.fullImage {
     width: 210mm;
     height: 70mm;
     background-position: center top;
@@ -409,6 +430,16 @@ p.no-column {
     column-span: all;
     margin-inside: -21mm;
     margin-outside: -16mm;
+}
+
+.fullImageTop {
+    float: top;
+    margin-top: -20mm;
+}
+
+.fullImageBottom {
+    float: bottom;
+    margin-bottom: -15mm;
 }
 
 .fullImageTop:first-child {
@@ -421,14 +452,15 @@ p.no-column {
 
 .studentBlock {
     position: relative;
+    margin: 2mm 0;
     font-family: KaiTi;
     page-break-inside: avoid;
     column-break-inside: avoid;
 }
 
 .studentImage {
-    width: 10rem;
-    height: 15rem;
+    width: 40mm;
+    height: 60mm;
     background-size: auto 100%;
     background-repeat: no-repeat;
 }
@@ -436,7 +468,7 @@ p.no-column {
 .studentInfo {
     position: absolute;
     bottom: 0;
-    left: 10.5rem;
+    left: 42mm;
 }
 
 .studentName {

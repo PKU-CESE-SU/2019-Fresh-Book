@@ -14,46 +14,52 @@
 @page :left {
     @top-left-corner {
         padding-top: 10mm;
-        background-color: cmyk(0,0,0,0.3,0.6);
-        color: cmyk(0,0,0,0.8);
-        content: counter(page) "　";
-        vertical-align: top;
-        font-size: 8pt;
-        font-family: KaiTi;
+        padding-right: 0.5em;
+        padding-bottom: 4mm;
+        background-color: cmyk(0,0,0,0.5,0.8);
+        color: cmyk(0,0,0,0);
+        content: counter(page);
+        vertical-align: bottom;
+        font-size: 15pt;
+        font-family: Page;
     }
 
     @top-left {
         padding-top: 10mm;
+        padding-bottom: 5mm;
+        padding-left: 0.5em;
         border-bottom-right-radius: 10mm;
         background-color: cmyk(0,0,0,0.3,0.6);
-        color: cmyk(0,0,0,0.8);
-        content: "|　环院直通车";
-        vertical-align: top;
+        content: "环院直通车";
+        vertical-align: bottom;
         font-size: 8pt;
-        font-family: KaiTi;
+        font-family: HeiTi;
     }
 }
 
 @page :right {
     @top-right-corner {
         padding-top: 10mm;
-        background-color: cmyk(0,0,0,0.3,0.6);
-        color: cmyk(0,0,0,0.8);
-        content: "　" counter(page);
-        vertical-align: top;
-        font-size: 8pt;
-        font-family: KaiTi;
+        padding-bottom: 4mm;
+        padding-left: 0.5em;
+        background-color: cmyk(0,0,0,0.5,0.8);
+        color: cmyk(0,0,0,0);
+        content: counter(page);
+        vertical-align: bottom;
+        font-size: 15pt;
+        font-family: Page;
     }
 
     @top-right {
         padding-top: 10mm;
+        padding-right: 0.5em;
+        padding-bottom: 5mm;
         border-bottom-left-radius: 10mm;
         background-color: cmyk(0,0,0,0.3,0.6);
-        color: cmyk(0,0,0,0.8);
-        content: string(subtitle) "　|";
-        vertical-align: top;
+        content: string(subPage);
+        vertical-align: bottom;
         font-size: 8pt;
-        font-family: KaiTi;
+        font-family: HeiTi;
     }
 }
 
