@@ -9,6 +9,14 @@
     size: A4 portrait;
     margin-inside: 21mm;
     margin-outside: 16mm;
+    
+    @footnotes {
+        border-top: thin solid black;
+        border-clip: 6em;
+        padding-top: 0.5em;
+        padding-left: 1em;
+        margin-top: 1em;
+    }
 }
 
 @page :left {
@@ -56,7 +64,7 @@
         padding-bottom: 5mm;
         border-bottom-left-radius: 10mm;
         background-color: cmyk(0,0,0,0.3,0.6);
-        content: string(subPage);
+        content: string(chaptitle);
         vertical-align: bottom;
         font-size: 8pt;
         font-family: HeiTi;

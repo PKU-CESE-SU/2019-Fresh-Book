@@ -1,35 +1,34 @@
 @charset "UTF-8";
-
 /* 字体定义 */
 
 /* 宋体，使用 方正兰亭宋_GBK */
 @font-face {
-  font-family: "SongTi";
-  src: url("../fonts/FZLTSK.TTF");
+    font-family: "SongTi";
+    src: url("../fonts/FZLTSK.TTF");
 }
 
 /* 黑体，使用 方正兰亭黑_GBK */
 @font-face {
-  font-family: "HeiTi";
-  src: url("../fonts/FZLTHK.TTF");
+    font-family: "HeiTi";
+    src: url("../fonts/FZLTHK.TTF");
 }
 
 @font-face {
     font-weight: bold;
-  font-family: "HeiTi";
-  src: url("../fonts/FZLTZHK.TTF");
+    font-family: "HeiTi";
+    src: url("../fonts/FZLTZHK.TTF");
 }
 
 /* 楷体，使用 方正楷体_GBK */
 @font-face {
-  font-family: "KaiTi";
-  src: url("../fonts/FZKTK.TTF");
+    font-family: "KaiTi";
+    src: url("../fonts/FZKTK.TTF");
 }
 
 /* 仿宋，使用 方正仿宋_GBK */
 @font-face {
-  font-family: "FangSong";
-  src: url("../fonts/FZFSK.TTF");
+    font-family: "FangSong";
+    src: url("../fonts/FZFSK.TTF");
 }
 
 @font-face {

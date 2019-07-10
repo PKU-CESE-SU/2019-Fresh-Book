@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     border: 0;
+    box-decoration-break: clone;
 }
 
 html {
@@ -35,7 +36,7 @@ h1 {
     font-family: Title;
     line-height: 157mm;
     page-break-before: right;
-    string-set: subtitle content();
+    string-set: chaptitle content();
     page: chapter-title;
     bookmark-level: 1;
 }
@@ -66,7 +67,7 @@ h2 {
 }
 
 #head-juan-shou-yu {
-    string-set: subtitle content();
+    string-set: chaptitle content();
 }
 
 h3 {
@@ -196,12 +197,40 @@ ol.half-bracket li::marker, ol ol ol li::marker {
     content: counter(list-item) ")";
 }
 
+sub, sup {
+    line-height: none;
+}
+
+/* 脚注样式 */
+
+.fn {
+    float: footnote; 
+    counter-increment: footnote;
+    font-family: KaiTi;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    text-indent: 0;
+}
+
+.fn::footnote-call {
+    content: counter(footnote);
+    font-size: 0.8rem;
+    vertical-align: super;
+    line-height: none;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+
+.fn a {
+    text-decoration: underline;
+}
+
 /* 目录样式 */
 .toc {
     page-break-before: right;
     page-break-after: right;
     page: toc;
-    string-set: subtitle "目录";
+    string-set: chaptitle "目录";
 }
 
 .tocTitle {
@@ -402,10 +431,6 @@ p.at-c, p.at-l, p.at-r {
 }
 
 .no-column {
-    column-count: 1;
-}
-
-p.no-column {
     column-span: all;
 }
 
