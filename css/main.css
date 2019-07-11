@@ -206,19 +206,21 @@ sub, sup {
 .fn {
     float: footnote; 
     counter-increment: footnote;
-    font-family: KaiTi;
-    font-size: 0.8rem;
-    line-height: 1.2;
+    text-align: justify;
     text-indent: 0;
+    font-size: 0.8rem;
+    font-family: KaiTi;
+    line-height: 1.2;
+    prince-text-justify: prince-cjk;
 }
 
 .fn::footnote-call {
-    content: counter(footnote);
-    font-size: 0.8rem;
-    vertical-align: super;
-    line-height: none;
-    margin-left: 0.25em;
     margin-right: 0.25em;
+    margin-left: 0.25em;
+    content: counter(footnote);
+    vertical-align: super;
+    font-size: 0.8rem;
+    line-height: none;
 }
 
 .fn a {

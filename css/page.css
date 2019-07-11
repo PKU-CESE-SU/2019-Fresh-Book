@@ -24,7 +24,7 @@
         padding-top: 10mm;
         padding-right: 0.5em;
         padding-bottom: 4mm;
-        background-color: cmyk(0,0,0,0.5,0.8);
+        background-color: cmyk(0,0,0,0.8,0.9);
         color: cmyk(0,0,0,0);
         content: counter(page);
         vertical-align: bottom;
@@ -37,7 +37,7 @@
         padding-bottom: 5mm;
         padding-left: 0.5em;
         border-bottom-right-radius: 10mm;
-        background-color: cmyk(0,0,0,0.3,0.6);
+        background-color: cmyk(0,0,0,0.2,0.7);
         content: "环院直通车";
         vertical-align: bottom;
         font-size: 8pt;
@@ -50,7 +50,7 @@
         padding-top: 10mm;
         padding-bottom: 4mm;
         padding-left: 0.5em;
-        background-color: cmyk(0,0,0,0.5,0.8);
+        background-color: cmyk(0,0,0,0.8,0.9);
         color: cmyk(0,0,0,0);
         content: counter(page);
         vertical-align: bottom;
@@ -63,7 +63,7 @@
         padding-right: 0.5em;
         padding-bottom: 5mm;
         border-bottom-left-radius: 10mm;
-        background-color: cmyk(0,0,0,0.3,0.6);
+        background-color: cmyk(0,0,0,0.2,0.7);
         content: string(chaptitle);
         vertical-align: bottom;
         font-size: 8pt;
