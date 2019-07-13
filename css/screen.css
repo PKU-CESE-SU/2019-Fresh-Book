@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/* 屏幕显示样式 */
+
+html {
+    font-size: 16px;
+}
+
+body {
+    padding: 8mm;
+}
+
+body, b, strong, th, h1, h2, h3, h4, h5, h6, figcaption, .tocTitle, .toc ul {
+    font-family: 'Noto Sans SC';
+}
+
+.quote, .notes, .fn, .font-fang-song, .studentBlock {
+    font-family: 'Noto Serif SC';
+}
+
+h1 {
+    position: relative;
+    margin-top: 0;
+    padding-bottom: 140mm;
+    line-height: 2;
+    overflow: hidden;
+}
+
+h1::after {
+    bottom: 0;
+    left: calc(50% - 105mm);
+}
+
+.fullImageTop, .fullImageBottom {
+    margin: 2mm auto;
+    max-width: 100%;
+}
+
+article {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table.listTable, table.listTable > thead > tr > th, table.listTable > * > tr:first-child > *, table.listTable > * > tr:last-child > * {
+    border-color: #000;
+}
+
+table.listTable > * > tr > td, table.listTable > tbody > tr > th {
+    border-color: #666;
+}
+
+.column {
+    column-count: 1;
+}
+
+.tocAuthors {
+    margin-top: 0;
+}

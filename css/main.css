@@ -90,7 +90,7 @@ h5 {
     font-size: 1rem;
 }
 
-h2+h3, h3+h4, h4+h5 {
+h2+h2, h2+h3, h2+h4, h2+h5, h3+h2, h3+h3, h3+h4, h3+h5, h4+h2, h4+h3, h4+h4, h4+h5, h5+h2, h5+h3, h5+h4, h5+h5 {
     margin-top: 0;
 }
 
@@ -149,7 +149,14 @@ a.xref-p2:after {
 }
 
 figure {
+    margin: 2mm auto;
     page-break-inside: avoid;
+}
+
+figure::after {
+    clear: both;
+    display: block;
+    content: '';
 }
 
 .figureFloatLeft {
@@ -173,7 +180,12 @@ img {
     vertical-align: middle;
 }
 
+figure > img {
+    width: 100%;
+}
+
 figcaption {
+    clear: both;
     text-align: center;
     font-family: HeiTi;
 }
@@ -337,15 +349,18 @@ code h-hws, code h-hws[hidden], kbd h-hws, kbd h-hws[hidden], samp h-hws, samp h
 /* 备用样式 */
 table.listTable {
     min-width: 75%;
-    border: double cmyk(0,0,0,1);
     border-collapse: collapse;
+    border-color: cmyk(0,0,0,1);
+    border-style: double;
     border-width: 3px 0;
     text-align: center;
 }
 
 table.listTable > * > tr > td, table.listTable > tbody > tr > th {
     padding: 0 3px;
-    border: 1px dashed cmyk(0,0,0,0.8);
+    border-color: cmyk(0,0,0,0.8);
+    border-style: dashed;
+    border-width: 1px;
 }
 
 table.listTable > * > tr > td > img:only-child {
@@ -366,11 +381,15 @@ table.listTable > * > tr > :last-child {
 }
 
 table.listTable > * > tr:first-child > * {
-    border-top: 1px solid cmyk(0,0,0,1);
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: cmyk(0,0,0,1);
 }
 
 table.listTable > * > tr:last-child > * {
-    border-bottom: 1px solid cmyk(0,0,0,1);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: cmyk(0,0,0,1);
 }
 
 .hide {
@@ -502,6 +521,22 @@ p.at-c, p.at-l, p.at-r {
     font-size: 2rem;
 }
 
-.chap-xue-sheng-huo-dong::after {
-    background-image: url(../images/chap-xue-sheng-huo-dong.jpg);
+.chap-xue-yuan-jian-jie::after {
+    background-image: url(../images/chap-xue-yuan-jian-jie.jpg);
+}
+
+.chap-xue-xi-sheng-huo::after {
+    background-image: url(../images/chap-xue-xi-sheng-huo.jpg);
+}
+
+.chap-xue-yuan-jian-jie::after {
+    background-image: url(../images/chap-xue-yuan-jian-jie.jpg);
+}
+
+.chap-yan-yuan-sheng-huo::after {
+    background-image: url(../images/chap-yan-yuan-sheng-huo.jpg);
+}
+
+.chap-lian-xi-fang-shi::after {
+    background-image: url(../images/chap-lian-xi-fang-shi.jpg);
 }
