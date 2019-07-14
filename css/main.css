@@ -64,6 +64,7 @@ h2 {
     page-break-after: avoid;
     bookmark-level: 2;
     column-break-after: avoid;
+    string-set: sectitle content();
 }
 
 #head-juan-shou-yu {
@@ -150,6 +151,7 @@ a.xref-p2:after {
 
 figure {
     margin: 2mm auto;
+    text-align: center;
     page-break-inside: avoid;
 }
 
@@ -174,8 +176,6 @@ figure::after {
 }
 
 img {
-    display: block;
-    margin: 0 auto;
     max-width: 100%;
     vertical-align: middle;
 }
@@ -186,19 +186,26 @@ figure > img {
 
 figcaption {
     clear: both;
-    text-align: center;
     font-family: HeiTi;
+}
+
+.figureCaption {
+    counter-increment: figurenum;
+}
+
+.figureCaption::before {
+    content: '图 ' counter(chapternum) '-' counter(figurenum) ' ';
 }
 
 ul, ol {
     margin-left: 1.7em;
+    text-align: justify;
+    prince-text-justify: prince-cjk;
+    prince-footnote-policy: keep-with-line;
 }
 
 ol {
     counter-reset: o-counter;
-    text-align: justify;
-    prince-text-justify: prince-cjk;
-    prince-footnote-policy: keep-with-line;
 }
 
 ol.bracket li::marker, ol ol li::marker {
@@ -286,7 +293,18 @@ sub, sup {
 }
 
 .toc ul ul ul a::after {
-    content: leader(' ') '　' target-counter(attr(href), page);
+    content: '(' target-counter(attr(href), page) ')';
+}
+
+.toc ul ul ul li {
+    float: left;
+    margin-right: 2em;
+}
+
+.toc ul ul ul::after {
+    clear: both;
+    display: block;
+    content: '';
 }
 
 .tocAuthors {
@@ -469,8 +487,7 @@ p.at-c, p.at-l, p.at-r {
 
 .fullImage {
     width: 210mm;
-    height: 70mm;
-    background-position: center top;
+    min-height: 70mm;
     background-size: 100% auto;
     background-repeat: no-repeat;
     column-span: all;
@@ -481,11 +498,15 @@ p.at-c, p.at-l, p.at-r {
 .fullImageTop {
     float: top;
     margin-top: -20mm;
+    padding-top: 70mm;
+    background-position: center top;
 }
 
 .fullImageBottom {
     float: bottom;
     margin-bottom: -15mm;
+    padding-bottom: 70mm;
+    background-position: center bottom;
 }
 
 .fullImageTop:first-child {
@@ -494,6 +515,12 @@ p.at-c, p.at-l, p.at-r {
 
 .fullImageTop+h2 {
     page-break-before: initial;
+}
+
+.fullImage > .figureCaption {
+    float: right;
+    padding: 0 12mm;
+    width: fit-content;
 }
 
 .studentBlock {
@@ -527,6 +554,10 @@ p.at-c, p.at-l, p.at-r {
 
 .chap-xue-xi-sheng-huo::after {
     background-image: url(../images/chap-xue-xi-sheng-huo.jpg);
+}
+
+.chap-xue-sheng-huo-dong::after {
+    background-image: url(../images/chap-xue-sheng-huo-dong.jpg);
 }
 
 .chap-xue-yuan-jian-jie::after {
