@@ -274,7 +274,7 @@ sub, sup {
     list-style: none;
     font-weight: 600;
     font-size: 1.5rem;
-    font-family: Page, HeiTi;
+    font-family: HeiTi;
 }
 
 .toc ul ul {
@@ -290,10 +290,15 @@ sub, sup {
 .toc ul a::after {
     margin-left: 1em;
     content: leader('.') '　' target-counter(attr(href), page);
+    font-family: Page;
 }
 
 .toc ul ul ul a::after {
     content: '(' target-counter(attr(href), page) ')';
+    vertical-align: sub;
+    font-size: 0.8em;
+    font-family: Page;
+    line-height: none;
 }
 
 .toc ul ul ul li {
@@ -517,7 +522,7 @@ p.at-c, p.at-l, p.at-r {
     page-break-before: initial;
 }
 
-.fullImage > .figureCaption {
+.fullImage > figcaption {
     float: right;
     padding: 0 12mm;
     width: fit-content;
