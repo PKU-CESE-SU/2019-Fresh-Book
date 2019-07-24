@@ -1,10 +1,16 @@
 @charset "UTF-8";
 /* 字体定义 */
 
+/* 数字，使用 方正兰亭宋_GBK */
+@font-face {
+    font-family: "TeX";
+    src: url("../fonts/FZLTSK-subfont.otf");
+}
+
 /* 宋体，使用 方正兰亭宋_GBK */
 @font-face {
     font-family: "SongTi";
-    src: url("../fonts/FZLTSK.TTF");
+    src: url("../fonts/FZLTSK.ttf");
 }
 
 /* 黑体，使用 方正兰亭黑_GBK */

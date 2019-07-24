@@ -1,6 +1,8 @@
 ref
 *.ttf
 *.TTF
+*.otf
+*.OTF
 *.exe
 *.EXE
 mathjax/

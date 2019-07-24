@@ -16,7 +16,7 @@ html {
 body {
     counter-reset: chapternum figurenum;
     font-size: 1rem;
-    font-family: SongTi;
+    font-family: TeX, SongTi;
     line-height: 1.7;
     orphans: 1;
     widows: 1;
